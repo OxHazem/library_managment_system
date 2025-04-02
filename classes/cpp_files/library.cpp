@@ -19,6 +19,8 @@ bool library ::borrowBook(int bookid,int userID){
            if(books[book].getbookid()==bookid){
                 if (books[book].getAvailblecopies()>0){
                 books[book].deCAvailblecount();
+                books[book].updateavailbaility();
+                borrowedbook.push_back(books[book]);
                 }else{
                     cout<<"the book is not availble at the moment"<<endl;
                     return false;
@@ -31,7 +33,17 @@ bool library ::borrowBook(int bookid,int userID){
 }
 void library ::viewallbooks(){
     for(int i =0 ; i<books.size();i++){
-        books[i].DisplayBookInfo()
+        books[i].DisplayBookInfo();
+    }
+}
+void library ::viewBorrowedBooks(){
+    for(int i=0;i<borrowedbook.size();i++){
+        borrowedbook[i].DisplayBookInfo();
+    }
+
+}
+void library ::SearchBook(string title){
+    for(int i=0 ; i<books.size();i++){
         
     }
 }

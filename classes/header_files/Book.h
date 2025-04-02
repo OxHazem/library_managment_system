@@ -13,13 +13,15 @@ class Book {
     public : 
         Book(int book_ID,string title,string authourname,int availblecopies,bool Isavailble=true){}
         void DisplayBookInfo(){}
-        bool updateavailbaility(){}
+        void updateavailbaility(){}
         int getbookid(){}
         int deCAvailblecount(){}
         int incAvailblecount(){}
         int getAvailblecopies(){}
+        bool getisavailble(){}
 
 };
+
 
 
 

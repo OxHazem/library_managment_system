@@ -18,12 +18,12 @@ void Book :: DisplayBookInfo(){
     }
     cout<<"--------------------------------------------------------------------"<<endl;
 }
-bool Book :: updateavailbaility(){
+void Book :: updateavailbaility(){
 
     if (AvailbleCopies>0){
-        return true;
+        IsAvailble= true;
     }else{
-        return false;
+        IsAvailble= false;
     }
 }
 int Book :: getbookid(){
@@ -38,5 +38,8 @@ int Book ::incAvailblecount(){
 }
 int Book ::getAvailblecopies(){
     return AvailbleCopies;
+}
+bool Book ::getisavailble(){
+    return IsAvailble;
 }
 
