@@ -15,3 +15,6 @@ void user:: Display(){
         cout<<"Name    : "<<Name  << endl ;  
         cout<<"Role     : "<<Role << endl ; 
 }
+int user ::getuserId(){
+    return User_ID ;
+}

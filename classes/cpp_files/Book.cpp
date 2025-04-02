@@ -16,6 +16,7 @@ void Book :: DisplayBookInfo(){
         cout<<"Book Availbele : "<< "YES" <<endl; 
 
     }
+    cout<<"--------------------------------------------------------------------"<<endl;
 }
 bool Book :: updateavailbaility(){
 

@@ -29,3 +29,9 @@ bool library ::borrowBook(int bookid,int userID){
 
 
 }
+void library ::viewallbooks(){
+    for(int i =0 ; i<books.size();i++){
+        books[i].DisplayBookInfo()
+        
+    }
+}

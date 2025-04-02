@@ -16,9 +16,7 @@ private :
 public : 
     user(int user_id,string email , string name,string role ){}
     void Display (){}
-    int getuserId(){
-        return User_ID ;
-    }
+    int getuserId(){}
     
 
 };
