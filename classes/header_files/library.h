@@ -1,5 +1,5 @@
-#ifndef library_H
-#define library_H
+#ifndef LIBRARY_H
+#define LIBRARY_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,9 +17,10 @@ private :
     vector<librarian>librarians;
     vector<memeber>members;
 public : 
+    library (){}
     void AddUser(user){}
     void Addbook (Book){}
-    bool borrowBook(int bookid , int userID){}
+    bool borrowBook(int bookid,int userID){}
     bool returnBook (int bookId,int userId){}
     void SearchBook(string title){}
     void viewallbooks(){}
@@ -36,4 +37,4 @@ public :
 
 
 
-#endif
+#endif // LIBRARY_H

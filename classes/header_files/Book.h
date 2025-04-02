@@ -11,9 +11,13 @@ class Book {
         int AvailbleCopies;
         bool IsAvailble ;
     public : 
-        Book(int book_ID,string title,string authourname,int availblecopies,bool Isavailble){}
+        Book(int book_ID,string title,string authourname,int availblecopies,bool Isavailble=true){}
         void DisplayBookInfo(){}
         bool updateavailbaility(){}
+        int getbookid(){}
+        int deCAvailblecount(){}
+        int incAvailblecount(){}
+        int getAvailblecopies(){}
 
 };
 

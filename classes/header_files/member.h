@@ -7,6 +7,7 @@ using namespace std ;
 
 class memeber : public user {
 public : 
+    memeber(int user_id,string email , string name,string role) : user(user_id,email,name,"memeber"){}
     void borrowBook(int book_ID){}
     void returnBook (int bookid){}
     void viewborrowedBook(){}
