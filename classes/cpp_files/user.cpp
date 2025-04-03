@@ -1,27 +1,16 @@
+#include "D:\DownLoad\projects\OOPproject\classes\header_files\user.h"
 #include <iostream>
-#include<string>
-using namespace std;
-#include "D:\\DownLoad\\projects\\OOPproject\\classes\\header_files\\user.h"
 
+User::User(int id, string n, string e, string r)
+    : userId(id), name(n), email(e), role(r) {}
 
-
-
-
-
-user::user(int user_id , string email , string name,string role):User_ID(user_id),Email(email),Name(name),Role(role){}
-void user:: Display(){
-    cout<<"User_ID : "<<User_ID << endl ;
-        cout<<"Email   : "<<Email << endl ;
-        cout<<"Name    : "<<Name  << endl ;  
-        cout<<"Role     : "<<Role << endl ; 
+void User::getUserInfo() const {
+    std::cout << "User ID: " << userId << "\n"
+              << "Name: " << name << "\n"
+              << "Email: " << email << "\n"
+              << "Role: " << role << "\n";
 }
-int user ::getuserId(){
-    return User_ID ;
-}
-string user::getName(){
-    return Name;
-}
-string user ::getrole(){
 
-    return Role;
-}
+int User::getUserId() const { return userId; }
+string User::getName() const { return name; }
+string User::getRole() const { return role; }

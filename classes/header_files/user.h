@@ -1,26 +1,23 @@
-#ifndef user_h
-#define user_h
+#ifndef USER_H
+#define USER_H
 
-#include<string>
-#include <iostream>
+#include <string>
 using namespace std;
+class User {
+protected:
+    int userId;
+    string name;
+    string email;
+    string role; // "Librarian" or "Member"
 
-
-
-class user {
-private : 
-    int User_ID ;
-    string Email;
-    string Name ;
-    string Role ;
-public : 
-    user(int user_id,string email , string name,string role ){}
-    void Display (){}
-    int getuserId(){}
-    string getName(){}
-    string getrole(){}
+public:
+    User(int id, string n, string e, string r);
+    virtual ~User() = default;
     
-    
-
+    virtual void getUserInfo() const;
+    int getUserId() const;
+    string getName() const;
+    string getRole() const;
 };
+
 #endif
