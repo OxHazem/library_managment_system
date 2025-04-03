@@ -19,6 +19,7 @@ class Book {
         int incAvailblecount(){}
         int getAvailblecopies(){}
         bool getisavailble(){}
+        string gettitle(){}
 
 };
 

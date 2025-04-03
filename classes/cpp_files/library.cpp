@@ -44,6 +44,11 @@ void library ::viewBorrowedBooks(){
 }
 void library ::SearchBook(string title){
     for(int i=0 ; i<books.size();i++){
-        
+        if(books[i].gettitle()==title){
+            books[i].DisplayBookInfo();
+        }
     }
+}
+vector<Book> library::getallbooks() {
+    return books ;
 }

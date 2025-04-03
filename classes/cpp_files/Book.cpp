@@ -42,4 +42,7 @@ int Book ::getAvailblecopies(){
 bool Book ::getisavailble(){
     return IsAvailble;
 }
+string Book ::gettitle(){
+    return Title ;
+}
 

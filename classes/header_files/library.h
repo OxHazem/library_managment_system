@@ -25,6 +25,7 @@ public :
     void SearchBook(string title){}
     void viewallbooks(){}
     void viewBorrowedBooks(){}
+    vector<Book> getallbooks(){}
 
 
 };
