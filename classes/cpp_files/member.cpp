@@ -1,49 +1,35 @@
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\member.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
 #include <iostream>
-#include <algorithm>
 
-Member::Member(int id, string n, string e)
-    : User(id, n, e, "Member") {}
+Member::Member(int id, std::string name) : User(id, name, "Member") {}
 
-const vector<int>& Member::getBorrowedBooks() const { 
-    return borrowedBooks; 
-}
-
-bool Member::hasBorrowed(int bookId) const {
-    return find(borrowedBooks.begin(), borrowedBooks.end(), bookId) != borrowedBooks.end();
-}
-
-void Member::borrowBook(int bookId) {
-    borrowedBooks.push_back(bookId);
-}
-
-void Member::returnBook(int bookId) {
-    auto it = find(borrowedBooks.begin(), borrowedBooks.end(), bookId);
-    if (it != borrowedBooks.end()) {
-        borrowedBooks.erase(it);
-    }
-}
-
-void Member::viewBorrowedBooks(const vector<Book>& allBooks) const {
-    if (borrowedBooks.empty()) {
-        cout << "No books borrowed.\n";
-        return;
-    }
-    
-    bool foundAny = false;
-    for (int bookId : borrowedBooks) {
-        for (const auto& book : allBooks) {
-            if (book.getBookId() == bookId) {
-                book.displayBookInfo();
-                cout << "-----------------\n";
-                foundAny = true;
-                break;
-            }
+void Member::borrowBook(std::vector<Book>& books, int bookId) {
+    for (auto& book : books) {  // Use a non-const reference to modify the book
+        if (book.getBookId() == bookId && book.isAvailable()) {
+            std::cout << "Book borrowed: " << book.getTitle() << std::endl;
+            book.updateAvailability(false);  // Modify the availability of the book
+            break;
         }
     }
-    
-    if (!foundAny) {
-        cout << "Borrowed books not found in library records.\n";
+}
+
+
+
+
+
+void Member::returnBook(std::vector<Book>& books, int bookId) {
+    for (auto& book : books) {
+        if (book.getBookId() == bookId) {
+            book.setAvailableCopies(book.getAvailableCopies() + 1);
+            std::cout << "Book returned successfully.\n";
+            return;
+        }
+    }
+    std::cout << "Book not found.\n";
+}
+
+void Member::viewAllBooks(const std::vector<Book>& books) const {
+    for (const auto& book : books) {
+        book.displayBookInfo();
     }
 }

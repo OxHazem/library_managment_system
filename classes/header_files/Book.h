@@ -2,33 +2,25 @@
 #define BOOK_H
 
 #include <string>
-#include <iostream>
-using namespace std;
+
 class Book {
 private:
     int bookId;
-    string title;
-    string author;
+    std::string title;
+    std::string author;
     int availableCopies;
+    bool isAvailable;
 
 public:
-    Book(int id, string t, string a, int copies);
-    
-    void displayBookInfo() const;
+    Book(int id, std::string t, std::string a, int copies);
     int getBookId() const;
-    string getTitle() const;
+    std::string getTitle() const;
+    std::string getAuthor() const;
     int getAvailableCopies() const;
-    void decreaseCopies();
-    void increaseCopies();
+    bool isAvailableForBorrowing() const;
+    void setAvailableCopies(int copies);
+    void displayBookInfo() const;
+    void updateAvailability();
 };
 
-#endif
-
-
-
-
-
-
-
-
-
+#endif // BOOK_H

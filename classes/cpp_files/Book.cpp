@@ -1,17 +1,39 @@
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
+#include <iostream>
 
-Book::Book(int id, string t, string a, int copies)
-    : bookId(id), title(t), author(a), availableCopies(copies) {}
+Book::Book(int id, std::string t, std::string a, int copies)
+    : bookId(id), title(t), author(a), availableCopies(copies), isAvailable(copies > 0) {}
 
-void Book::displayBookInfo() const {
-    cout << "Book ID: " << bookId << "\n"
-              << "Title: " << title << "\n"
-              << "Author: " << author << "\n"
-              << "Available Copies: " << availableCopies << "\n";
+int Book::getBookId() const {
+    return bookId;
 }
 
-int Book::getBookId() const { return bookId; }
-string Book::getTitle() const { return title; }
-int Book::getAvailableCopies() const { return availableCopies; }
-void Book::decreaseCopies() { if (availableCopies > 0) availableCopies--; }
-void Book::increaseCopies() { availableCopies++; }
+std::string Book::getTitle() const {
+    return title;
+}
+
+std::string Book::getAuthor() const {
+    return author;
+}
+
+int Book::getAvailableCopies() const {
+    return availableCopies;
+}
+
+bool Book::isAvailableForBorrowing() const {
+    return isAvailable;
+}
+
+void Book::setAvailableCopies(int copies) {
+    availableCopies = copies;
+    isAvailable = copies > 0;
+}
+
+void Book::displayBookInfo() const {
+    std::cout << "ID: " << bookId << ", Title: " << title << ", Author: " << author 
+              << ", Available Copies: " << availableCopies << "\n";
+}
+
+void Book::updateAvailability() {
+    isAvailable = availableCopies > 0;
+}

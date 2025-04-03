@@ -2,22 +2,18 @@
 #define MEMBER_H
 
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\user.h"
+#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
 #include <vector>
-using namespace std;
-class Book; // Forward declaration
 
 class Member : public User {
-private:
-    vector<int> borrowedBooks;
-
 public:
-    Member(int id, string n, string e);
-    
-    const vector<int>& getBorrowedBooks() const;
-    bool hasBorrowed(int bookId) const;
-    void borrowBook(int bookId);
-    void returnBook(int bookId);
-    void viewBorrowedBooks(const vector<Book>& allBooks) const;
+    Member(int id, std::string name);
+    void borrowBook(std::vector<Book>& books, int bookId);
+
+
+
+    void returnBook(std::vector<Book>& books, int bookId);
+    void viewAllBooks(const std::vector<Book>& books) const;
 };
 
-#endif
+#endif // MEMBER_H

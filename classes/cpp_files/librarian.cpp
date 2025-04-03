@@ -1,81 +1,37 @@
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\librarian.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
 #include <iostream>
-#include <limits>
-#include <algorithm>
 
-Librarian::Librarian(int id, string n, string e)
-    : User(id, n, e, "Librarian") {}
+Librarian::Librarian(int id, std::string name) : User(id, name, "Librarian") {}
 
-void Librarian::addBook(vector<Book>& books) const {
-    int id;
-    string title, author;
-    int copies;
-
-    cout << "Enter Book ID: ";
-    while (!(cin >> id) || id <= 0) {
-        cout << "Invalid ID. Enter a positive number: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    // Check for duplicate ID
-    if (any_of(books.begin(), books.end(), 
-                  [id](const Book& b) { return b.getBookId() == id; })) {
-        cout << "Book ID already exists!\n";
-        return;
-    }
-
-    cin.ignore(); 
-    cout << "Enter Title: ";
-    getline(cin, title);
-
-    cout << "Enter Author: ";
-    getline(cin, author);
-
-    cout << "Enter Available Copies: ";
-    while (!(cin >> copies) || copies < 0) {
-        cout << "Invalid input. Enter non-negative number: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    books.emplace_back(id, title, author, copies);
-    cout << "Book added successfully!\n";
+void Librarian::addBook(std::vector<Book>& books, const Book& book) {
+    books.push_back(book);
+    std::cout << "Book \"" << book.getTitle() << "\" added successfully.\n";
 }
 
-void Librarian::removeBook(vector<Book>& books) const {
-    if (books.empty()) {
-        cout << "No books available to remove.\n";
-        return;
+void Librarian::removeBook(std::vector<Book>& books, int bookId) {
+    for (auto it = books.begin(); it != books.end(); ++it) {
+        if (it->getBookId() == bookId) {
+            books.erase(it);
+            std::cout << "Book removed successfully.\n";
+            return;
+        }
     }
-
-    int id;
-    cout << "Enter Book ID to remove: ";
-    while (!(cin >> id)) {
-        cout << "Invalid input. Enter a number: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    auto it = find_if(books.begin(), books.end(), 
-                         [id](const Book& b) { return b.getBookId() == id; });
-    
-    if (it != books.end()) {
-        books.erase(it);
-        cout << "Book removed successfully!\n";
-    } else {
-        cout << "Book not found!\n";
-    }
+    std::cout << "Book not found.\n";
 }
 
-void Librarian::viewAllBooks(const vector<Book>& books) const {
-    if (books.empty()) {
-        cout << "No books available.\n";
-        return;
+void Librarian::updateBook(std::vector<Book>& books, int bookId, std::string newTitle, std::string newAuthor, int newCopies) {
+    for (auto& book : books) {
+        if (book.getBookId() == bookId) {
+            book.setAvailableCopies(newCopies);
+            std::cout << "Book updated successfully.\n";
+            return;
+        }
     }
+    std::cout << "Book not found.\n";
+}
+
+void Librarian::viewAllBooks(const std::vector<Book>& books) const {
     for (const auto& book : books) {
         book.displayBookInfo();
-        cout << "-----------------\n";
     }
 }
