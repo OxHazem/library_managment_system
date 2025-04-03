@@ -1,6 +1,7 @@
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\library.h"
 void library ::Addbook(Book newbook){
     books.push_back(newbook);
+    cout<<"Book added to the library"<<endl;
 }
 void library ::AddUser(user newuser){
     users.push_back(newuser);

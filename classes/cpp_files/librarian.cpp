@@ -16,4 +16,5 @@ void librarian :: addBook(library * mainlibrary){
     Book newbook = Book(bookId, title, AuthorName, avialblecopies, true);
     mainlibrary ->Addbook(newbook);
 }
-void librarian ::removeBook(int id , library * mainlibrary ){}
+void librarian ::removeBook(int id , library * mainlibrary ){
+}

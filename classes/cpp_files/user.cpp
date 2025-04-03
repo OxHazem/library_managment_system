@@ -18,3 +18,10 @@ void user:: Display(){
 int user ::getuserId(){
     return User_ID ;
 }
+string user::getName(){
+    return Name;
+}
+string user ::getrole(){
+
+    return Role;
+}
