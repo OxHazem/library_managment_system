@@ -7,13 +7,13 @@
 
 class Member : public User {
 public:
-    Member(int id, std::string name);
-    void borrowBook(std::vector<Book>& books, int bookId);
+    Member(int id, string name);
+    void borrowBook(vector<Book>& books, int bookId);
 
 
 
-    void returnBook(std::vector<Book>& books, int bookId);
-    void viewAllBooks(const std::vector<Book>& books) const;
+    void returnBook(vector<Book>& books, int bookId);
+    void viewAllBooks(const vector<Book>& books) const;
 };
 
-#endif // MEMBER_H
+#endif 

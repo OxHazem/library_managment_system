@@ -1,18 +1,18 @@
 #include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
 #include <iostream>
 
-Book::Book(int id, std::string t, std::string a, int copies)
+Book::Book(int id, string t, string a, int copies)
     : bookId(id), title(t), author(a), availableCopies(copies), isAvailable(copies > 0) {}
 
 int Book::getBookId() const {
     return bookId;
 }
 
-std::string Book::getTitle() const {
+string Book::getTitle() const {
     return title;
 }
 
-std::string Book::getAuthor() const {
+string Book::getAuthor() const {
     return author;
 }
 
@@ -30,7 +30,7 @@ void Book::setAvailableCopies(int copies) {
 }
 
 void Book::displayBookInfo() const {
-    std::cout << "ID: " << bookId << ", Title: " << title << ", Author: " << author 
+    cout << "ID: " << bookId << ", Title: " << title << ", Author: " << author 
               << ", Available Copies: " << availableCopies << "\n";
 }
 

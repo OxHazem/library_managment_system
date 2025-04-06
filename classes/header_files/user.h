@@ -2,18 +2,18 @@
 #define USER_H
 
 #include <string>
-
+using namespace std;
 class User {
 protected:
     int userId;
-    std::string name;
-    std::string role;
+    string name;
+    string role;
 
 public:
     User(int id, std::string n, std::string r);
     int getUserId() const;
-    std::string getName() const;
-    std::string getRole() const;
+    string getName() const;
+    string getRole() const;
 };
 
-#endif // USER_H
+#endif 

@@ -7,11 +7,11 @@
 
 class Librarian : public User {
 public:
-    Librarian(int id, std::string name);
-    void addBook(std::vector<Book>& books, const Book& book);
-    void removeBook(std::vector<Book>& books, int bookId);
-    void updateBook(std::vector<Book>& books, int bookId, std::string newTitle, std::string newAuthor, int newCopies);
-    void viewAllBooks(const std::vector<Book>& books) const;
+    Librarian(int id, string name);
+    void addBook(vector<Book>& books, const Book& book);
+    void removeBook(vector<Book>& books, int bookId);
+    void updateBook(vector<Book>& books, int bookId, string newTitle, string newAuthor, int newCopies);
+    void viewAllBooks(const vector<Book>& books) const;
 };
 
-#endif // LIBRARIAN_H
+#endif 

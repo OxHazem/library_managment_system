@@ -2,20 +2,20 @@
 #define BOOK_H
 
 #include <string>
-
+using namespace std;
 class Book {
 private:
     int bookId;
-    std::string title;
-    std::string author;
+    string title;
+    string author;
     int availableCopies;
     bool isAvailable =true;
 
 public:
-    Book(int id, std::string t, std::string a, int copies);
+    Book(int id, string t, string a, int copies);
     int getBookId() const;
-    std::string getTitle() const;
-    std::string getAuthor() const;
+    string getTitle() const;
+    string getAuthor() const;
     int getAvailableCopies() const;
     bool isAvailableForBorrowing() const;
     void setAvailableCopies(int copies);
@@ -24,4 +24,4 @@ public:
     bool IsAvailble();
 };
 
-#endif // BOOK_H
+#endif 

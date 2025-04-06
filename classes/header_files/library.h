@@ -9,8 +9,8 @@
 
 class Library {
 private:
-    std::vector<Book> books;
-    std::vector<User*> users;
+    vector<Book> books;
+    vector<User*> users;
 
 public:
     void addBook(const Book& book);
@@ -18,11 +18,11 @@ public:
     void addUser(User* user);
     void displayBooks() const;
     User* findUser(int userId) const;
-    void searchBookByTitle(const std::string& title) const;
+    void searchBookByTitle(const string& title) const;
 
     // Getter for books vector
     // const std::vector<Book>& getBooks() const;
-    std::vector<Book>  & getBooks();
+    vector<Book>  & getBooks();
 };
 
 #endif // LIBRARY_H

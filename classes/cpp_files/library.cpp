@@ -12,7 +12,7 @@ void Library::removeBook(int bookId) {
             return;
         }
     }
-    std::cout << "Book not found.\n";
+    cout << "Book not found.\n";
 }
 
 void Library::addUser(User* user) {
@@ -32,11 +32,11 @@ User* Library::findUser(int userId) const {
             return user;
         }
     }
-    std::cout<<"didnot find the user"<<std::endl;
+    cout<<"didnot find the user"<<endl;
     return nullptr;
 }
 
-void Library::searchBookByTitle(const std::string& title) const {
+void Library::searchBookByTitle(const string& title) const {
     for (const auto& book : books) {
         if (book.getTitle() == title) {
             book.displayBookInfo();
@@ -44,7 +44,6 @@ void Library::searchBookByTitle(const std::string& title) const {
     }
 }
 
-// Getter for books
-std::vector<Book>& Library::getBooks(){
+vector<Book>& Library::getBooks(){
     return books;
 }

@@ -8,28 +8,17 @@
 
 
 int main() {
-    // Create the library and users
     Library library;
     Librarian librarian(1, "John Doe");
     Member member(2, "Jane Smith");
-
     library.addUser(&librarian);
     library.addUser(&member);
-
-    // Create and add books
     Book book1(1, "The Catcher in the Rye", "J.D. Salinger", 3);
     Book book2(2, "1984", "George Orwell", 2);
-
     library.addBook(book1);
-    library.addBook(book2);
-
-    // Librarian views all books
+    library.addBook(book2);  
     librarian.viewAllBooks(library.getBooks());
-
-    // Member borrows a book
     member.borrowBook(library.getBooks(), 1);
-
-    // Display all books after borrowing
     library.displayBooks();
     library.findUser(1);
 
