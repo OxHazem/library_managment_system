@@ -21,7 +21,8 @@ public:
     void searchBookByTitle(const std::string& title) const;
 
     // Getter for books vector
-    const std::vector<Book>& getBooks() const;
+    // const std::vector<Book>& getBooks() const;
+    std::vector<Book>  & getBooks();
 };
 
 #endif // LIBRARY_H

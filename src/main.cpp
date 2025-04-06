@@ -31,6 +31,7 @@ int main() {
 
     // Display all books after borrowing
     library.displayBooks();
+    library.findUser(1);
 
     return 0;
 }

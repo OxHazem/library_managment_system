@@ -5,9 +5,9 @@ Member::Member(int id, std::string name) : User(id, name, "Member") {}
 
 void Member::borrowBook(std::vector<Book>& books, int bookId) {
     for (auto& book : books) {  // Use a non-const reference to modify the book
-        if (book.getBookId() == bookId && book.isAvailable()) {
+        if (book.getBookId() == bookId && book.isAvailableForBorrowing()) {
             std::cout << "Book borrowed: " << book.getTitle() << std::endl;
-            book.updateAvailability(false);  // Modify the availability of the book
+            book.updateAvailability();  // Modify the availability of the book
             break;
         }
     }

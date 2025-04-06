@@ -28,9 +28,11 @@ void Library::displayBooks() const {
 User* Library::findUser(int userId) const {
     for (auto user : users) {
         if (user->getUserId() == userId) {
+            std::cout<<"found the user"<<std::endl;
             return user;
         }
     }
+    std::cout<<"didnot find the user"<<std::endl;
     return nullptr;
 }
 
@@ -43,6 +45,6 @@ void Library::searchBookByTitle(const std::string& title) const {
 }
 
 // Getter for books
-const std::vector<Book>& Library::getBooks() const {
+std::vector<Book>& Library::getBooks(){
     return books;
 }

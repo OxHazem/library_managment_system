@@ -9,7 +9,7 @@ private:
     std::string title;
     std::string author;
     int availableCopies;
-    bool isAvailable;
+    bool isAvailable =true;
 
 public:
     Book(int id, std::string t, std::string a, int copies);
@@ -21,6 +21,7 @@ public:
     void setAvailableCopies(int copies);
     void displayBookInfo() const;
     void updateAvailability();
+    bool IsAvailble();
 };
 
 #endif // BOOK_H

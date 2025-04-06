@@ -37,3 +37,6 @@ void Book::displayBookInfo() const {
 void Book::updateAvailability() {
     isAvailable = availableCopies > 0;
 }
+bool Book::IsAvailble(){
+    return isAvailable;
+}
