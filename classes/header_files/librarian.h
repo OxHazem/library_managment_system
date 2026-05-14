@@ -1,8 +1,8 @@
 #ifndef LIBRARIAN_H
 #define LIBRARIAN_H
 
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\user.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
+#include "user.h"
+#include "Book.h"
 #include <vector>
 
 class Librarian : public User {

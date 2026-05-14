@@ -1,8 +1,8 @@
 #ifndef MEMBER_H
 #define MEMBER_H
 
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\user.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
+#include "user.h"
+#include "Book.h"
 #include <vector>
 
 class Member : public User {
