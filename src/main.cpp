@@ -1,8 +1,8 @@
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\library.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\Book.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\user.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\librarian.h"
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\member.h"
+#include "../classes/header_files/library.h"
+#include "../classes/header_files/Book.h"
+#include "../classes/header_files/user.h"
+#include "../classes/header_files/librarian.h"
+#include "../classes/header_files/member.h"
 #include <iostream>
 
 
