@@ -7,7 +7,7 @@ void Member::borrowBook(vector<Book>& books, int bookId) {
     for (auto& book : books) {  
         if (book.getBookId() == bookId && book.isAvailableForBorrowing()) {
             cout << "Book borrowed: " << book.getTitle() << endl;
-            book.updateAvailability();  
+            book.setAvailableCopies(book.getAvailableCopies() - 1);
             break;
         }
     }
