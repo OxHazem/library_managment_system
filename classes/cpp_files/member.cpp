@@ -1,4 +1,4 @@
-#include "D:\DownLoad\projects\OOPproject\classes\header_files\member.h"
+#include "../header_files/member.h"
 #include <iostream>
 
 Member::Member(int id, string name) : User(id, name, "Member") {}
