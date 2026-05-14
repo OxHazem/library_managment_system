@@ -1,0 +1,43 @@
+# Library Management System
+
+A C++ Object-Oriented Library Management System that features SQLite3 database integration for persistent data storage.
+
+## Features
+- **Object-Oriented Design**: Utilizes C++ classes like `Library`, `Book`, `User`, `Librarian`, and `Member`.
+- **Database Persistence**: Books are automatically saved and loaded from a local SQLite database (`library.db`).
+- **State Management**: Checking out a book automatically decreases available copies and syncs the changes when the application closes.
+
+## Prerequisites
+To build and run this project, you need:
+- `g++` (supporting C++17)
+- `make`
+- `sqlite3` development libraries (`libsqlite3-dev` on Debian/Ubuntu)
+
+## Build Instructions
+This project uses a standard Makefile. To compile the application, simply run the following command in the root directory:
+
+```bash
+make
+```
+
+This will compile all the source files and create an executable named `library_system.exe`.
+
+If you need to clean the build directory (remove object files and the executable), run:
+```bash
+make clean
+```
+
+## Running the Application
+After building, run the application using:
+
+```bash
+./library_system.exe
+```
+
+When you first run the application, it will automatically create the `library.db` database file in your root folder. All books you add and changes to their availability will persist between runs!
+
+## Project Structure
+- `Makefile` - The build configuration.
+- `src/` - Contains the `main.cpp` entry point.
+- `classes/header_files/` - C++ Header files defining the class schemas.
+- `classes/cpp_files/` - C++ Source files implementing the classes logic.
