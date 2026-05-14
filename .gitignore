@@ -1,2 +1,5 @@
 library.db  
 library_system.exe
+src/main.o
+classes/cpp_files/*.o
+
